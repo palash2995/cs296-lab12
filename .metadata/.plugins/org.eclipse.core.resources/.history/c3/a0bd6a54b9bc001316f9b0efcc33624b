@@ -1,0 +1,9 @@
+package cs296JTalk2;
+
+public class multipleClients extends Thread{
+	
+	JServer j;
+	
+	public multipleClients
+
+}

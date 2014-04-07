@@ -1,0 +1,32 @@
+package cs296JTalk2;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class JServer extends Thread{
+	private Thread t;
+	private String threadName;
+	private ServerSocket ss;
+	private boolean connectionStatus = false; 
+	public JServer(int port, String threadName) throws IOException{
+		acceptConnections( port );
+	}
+	public void acceptConnections(int port) throws IOException{
+		ss = new ServerSocket(port);
+		System.out.println("Listening on port "+ss);
+		while(true){
+			Socket s = ss.accept();
+			if(!connectionStatus){
+				changeStatus();
+				System.out.println("Connection from "+s);
+				new JChatComm(this,s);
+			}
+		}
+	}
+	
+	public void changeStatus(){
+		connectionStatus = !(connectionStatus);
+	}
+
+}

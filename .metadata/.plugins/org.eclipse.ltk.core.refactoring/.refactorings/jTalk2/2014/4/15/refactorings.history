@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;cs296JTalk2.gui.java&apos; to &apos;Gui.java&apos;&#x0A;- Original project: &apos;jTalk2&apos;&#x0A;- Original element: &apos;cs296JTalk2.gui.java&apos;&#x0A;- Renamed element: &apos;cs296JTalk2.Gui.java&apos;" description="Rename compilation unit &apos;gui.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;cs296JTalk2{gui.java" name="Gui.java" references="false" stamp="1396771330311" version="1.0"/>
+</session>

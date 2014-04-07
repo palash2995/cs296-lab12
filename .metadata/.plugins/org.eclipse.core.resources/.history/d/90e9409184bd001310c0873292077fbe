@@ -1,0 +1,18 @@
+package cs296JTalk2;
+
+import javax.swing.JFrame;
+
+public class CreateAndShowGUI extends JFrame{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public CreateAndShowGUI(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		add(new Gui());
+		pack();
+		setVisible(true);
+	}
+
+}

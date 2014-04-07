@@ -1,0 +1,50 @@
+package cs296JTalk2;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class Gui extends JFrame{
+	public gui() {
+        
+        initUI();
+    }
+    private void initUI(){
+		JPanel panel = new JPanel(new GridLayout(3,1));
+		String lyrics="<html> jrhbkjndjkvfknv<br>fkvfkjffjvnkftkjnbfk</html>";
+		JLabel label = new JLabel(lyrics);
+        label.setFont(new Font("Georgia", Font.PLAIN, 14));
+        label.setForeground(new Color(50, 50, 25));
+        
+        panel.add(label);
+        
+        JScrollPane pane = new JScrollPane();
+        JTextArea area = new JTextArea();
+        //panel1.setLayout(new BorderLayout());
+        //panel1.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        area.setLineWrap(true);
+        area.setWrapStyleWord(true);
+        area.setBorder(BorderFactory.createEmptyBorder(8, 8, 8, 8));
+
+        pane.getViewport().add(area);
+        panel.add(pane);
+        
+        JButton btn = new JButton("Send");
+        panel.add(btn);
+        
+        getContentPane().add(panel);
+        //setVisible(true);
+		setTitle("JTextArea");
+        setSize(new Dimension(350, 300));
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+}

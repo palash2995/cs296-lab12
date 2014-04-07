@@ -1,0 +1,20 @@
+import java.io.IOException;
+
+import cs296JTalk2.Gui;
+import cs296JTalk2.JClient;
+import cs296JTalk2.JServer;
+
+
+public class jtalkG02 {
+	public static void main(String[] args) throws IOException, ClassNotFoundException{
+		if(args.length == 0){
+			System.out.println("I am here");
+			new JServer(5123);
+		}
+		else{
+			new JClient(args[0],5123);
+		}
+		new Gui();
+	}
+
+}

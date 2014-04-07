@@ -1,0 +1,19 @@
+import java.io.IOException;
+
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
+import cs296JTalk2.Gui;
+
+
+public class jtalkG02 extends JFrame{
+	public static void main(String[] args) throws IOException, ClassNotFoundException{
+		SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                Gui ex = new Gui();
+                ex.setVisible(true);
+            }
+        });
+	}
+}

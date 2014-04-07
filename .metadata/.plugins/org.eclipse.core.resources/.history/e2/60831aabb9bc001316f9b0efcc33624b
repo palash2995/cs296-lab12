@@ -1,0 +1,16 @@
+package cs296JTalk2;
+
+public class multipleClients extends Thread{
+	
+	JServer j;
+	int port;
+	
+	public multipleClients(JServer j1, int port1){
+		j=j1;
+		port=port1;
+	}
+	public void run(){
+		j.acceptConnections(port);
+	}
+
+}
