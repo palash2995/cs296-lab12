@@ -56,6 +56,7 @@ public class Gui extends JPanel implements ActionListener {
 		
 		c.fill = GridBagConstraints.HORIZONTAL;
 		add(button, c);
+		//remove(button);
 	}
 	
 	public void actionPerformed(ActionEvent event) {
@@ -64,6 +65,7 @@ public class Gui extends JPanel implements ActionListener {
 			textArea.append("You: "+text+newline);
 			sendArea.setText("");
 			try {
+				 System.out.println(text);
 				chat.sendMessage(this,new CompleteMsg(text,new Date(),"You","Other"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

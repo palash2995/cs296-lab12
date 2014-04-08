@@ -35,7 +35,7 @@ public class JClient implements Runnable {
             if (packet.getMessage().equals("Sure. Let us begin.")){
             	a++;
             	System.out.println(packet.getMessage());
-                //new JChatComm(socket,message,response);
+                new JChatComm(socket,message,response);
             }
             else {
                 System.out.println("Server Busy :(");

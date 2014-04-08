@@ -42,7 +42,7 @@ public class JChatComm extends JChatSession implements JTalkChat,Runnable{
 		String in = msg.getMessage();
 		//BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String line = "";
-		   while (!(line.equalsIgnoreCase("End Chat") == true && identity == 0)&&status){
+		   if (!(line.equalsIgnoreCase("End Chat") == true)){
 			   ObjectOutputStream ous =  new ObjectOutputStream(socket.getOutputStream());
 		       line = in;
 		       line = line.trim();
@@ -51,19 +51,19 @@ public class JChatComm extends JChatSession implements JTalkChat,Runnable{
 		    	   line = "Sure. Let us begin.";
 		       }
 		       Date date=msg.getDate();
-//		       DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
-//		       dos.writeUTF(line);
+		       //DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+		       //os.writeUTF(line);
 		       JPacket packet=new JPacket(line,date);
-//		       System.out.println(packet.getMessage());
-		       if(status){
+		       System.out.println(packet.getMessage());
+		       
 		    	   ous.writeObject(packet);
 		    	   CompleteMsg message=new CompleteMsg(line,date,"You","Other");
 		    	   this.logMessage(message);
-		       }
+		      
 		       //do something
 		   }
-		   status = false;
-		   read.interrupt();
+		   //status = false;
+		   //read.interrupt();
 		   //in.close();
 	}
 	public void receiveMessage(Gui gui){	
